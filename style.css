@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FEFAE0;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    height: 100vh;
+}
+
+.menu{
+    height: 50px;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    background-color: #EECE9F;
+}
+
+.menu img{
+    width: 150px;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.options{
+    margin-right: 100px;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+}
+
+.options a{
+    text-decoration: none;
+    color: #606C38;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    padding: 20px 0;
+    height: 40vh;
+    background-color: #F6E4C0;
+    position: relative;
+    display: flex;
+}
+
+.info{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid black; */
+    color: #283618;
+    width: 40%;
+    height: 100%;
+}
+
+.info h1{
+    font-size: 90px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #CDD5AF;
+}
+
+.recipe-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.recipe-card {
+    background-color: #C4CEA1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    width: 250px;
+    height: 265px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card img {
+    width: 50%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+.recipe-title {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.recipe-category {
+    font-size: 14px;
+    color: #888;
+}
+
+.recipe-description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #EECE9F;
+    color: #283618;
+}

@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal de la página */
+.container {
+    display: flex;
+    height: 100vh; /* Utilizamos toda la altura de la ventana */
+}
+
+.container img {
+    width: 50%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+}
+
+.right {
+    width: 50%; 
+    padding: 20px;
+    background-color: #F6E4C0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título de la receta */
+.recipe-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Descripción de la receta */
+.recipe-content {
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 600px;
+}

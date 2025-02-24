@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodNet</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlazamos el archivo CSS externo -->
+</head>
+<body>
+
+    <div class="content">
+        <div class="menu">
+            <img src="./Logo.png" alt="">
+            <div class="options">
+                <a href="">Inicio</a>
+                <a href="">Contacto</a>
+            </div>
+        </div>
+        <header>
+            <div class="info">
+                <h1>FOODNET</h1>
+                <p>Explora nuestra colección de recetas fáciles y sabrosas para todos los gustos. Desde platos tradicionales hasta opciones saludables, ¡aquí encontrarás lo que buscas!</p>
+            </div>
+        </header>
+    
+        <div class="container">
+            <div class="filter">
+                <label for="category-select">Filtrar por Categoría: </label>
+                <select id="category-select" onchange="filterRecipes()">
+                    <option value="all">Todas</option>
+                    <option value="postre">Postres</option>
+                    <option value="salado">Salado</option>
+                    <option value="vegetariano">Vegetariano</option>
+                </select>
+            </div>
+    
+            <div class="recipe-card-container" id="recipe-list">
+                <!-- Recetas se generarán aquí dinámicamente -->
+            </div>
+        </div>
+    
+        <footer>
+            <p>&copy; 2025 FoodNet</p>
+        </footer>
+
+    </div>
+
+    
+
+    <script>
+        // Datos de las recetas
+        const recipes = [
+            {
+                title: "Tarta de Manzana",
+                category: "postre",
+                description: "Una receta clásica de tarta de manzana con un toque casero.",
+                image: "./img/tartaManzana.jpg",
+                link: "./html/TartaManzana.html"
+            },
+            {
+                title: "Ensalada Mediterránea",
+                category: "vegetariano",
+                description: "Fresca y saludable ensalada con ingredientes mediterráneos.",
+                image: "./img/EnsaladaMediterranea.jpg",
+                link: "./html/EnsaladaMediterranea.html"
+            },
+            {
+                title: "Pizza Margherita",
+                category: "salado",
+                description: "Pizza tradicional con salsa de tomate, mozzarella y albahaca.",
+                image: "./img/PizzaMarguerita.jpg",
+                link: "./html/PizzaMargherita.html"
+            },
+            {
+                title: "Brownies de Chocolate",
+                category: "postre",
+                description: "Deliciosos brownies de chocolate con nueces.",
+                image: "./img/BrowniesChocolate.jpg",
+                link: "./html/BrowniesChocolate.html"
+            },
+            {
+                title: "Aguachile de Camarón",
+                category: "salado",
+                description: "Plato tradicional mexicano con camarones frescos y limón.",
+                image: "./img/AguachileCamaron.jpg",
+                link: "./html/Aguachile.html"
+            }
+        ];
+
+        // Función para mostrar las recetas en el catálogo
+        function displayRecipes(filteredRecipes) {
+            const recipeList = document.getElementById('recipe-list');
+            recipeList.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevas recetas
+            filteredRecipes.forEach(recipe => {
+                const recipeCard = document.createElement('div');
+                recipeCard.classList.add('recipe-card');
+                recipeCard.innerHTML = `
+                    <a href="${recipe.link}">
+                    <img src="${recipe.image}" alt="${recipe.title}">
+                    <h3 class="recipe-title">${recipe.title}</h3>
+                    <p class="recipe-category">${recipe.category}</p>
+                    <p class="recipe-description">${recipe.description}</p>
+                `;
+                recipeList.appendChild(recipeCard);
+            });
+        }
+
+        // Filtrar recetas por categoría seleccionada
+        function filterRecipes() {
+            // Obtenemos el valor seleccionado en el filtro usando getElementById
+            const categorySelect = document.getElementById('category-select');
+            const selectedCategory = categorySelect.value;
+
+            // Filtrar recetas según la categoría seleccionada
+            if (selectedCategory === "all") {
+                displayRecipes(recipes); // Mostrar todas las recetas si es "todas"
+            } else {
+                const filteredRecipes = recipes.filter(recipe => recipe.category === selectedCategory);
+                displayRecipes(filteredRecipes);
+            }
+        }
+
+        // Mostrar todas las recetas al cargar la página
+        window.onload = function() {
+            displayRecipes(recipes);
+        };
+    </script>
+
+</body>
+</html>
